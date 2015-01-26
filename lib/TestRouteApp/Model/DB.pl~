@@ -1,0 +1,15 @@
+package MyApp::Model::DB;
+
+use strict;
+use warnings;
+
+use Mojo::Pg;
+
+my $pg = Mojo::Pg->new('postgresql://postgres:123123@localhost/news');
+my $db = $pg->db;
+
+sub GetTable {
+	my ($self, $name_table) = @_;
+	my %result = $db->query('SELECT headline, content FROM articles'); 
+	return %result;
+}

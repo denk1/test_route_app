@@ -1,0 +1,15 @@
+% layout 'default';
+
+%= form_for adding_news => (method => 'POST') => begin
+      %= label_for user => 'Headline news'
+      <br>
+      %= text_field 'headline_news' => $headline
+      <br>
+      %= label_for user => 'Content news'
+      <br>
+      %= text_area 'content_news' => $content, cols => 40, rows => 40
+      <br>
+      
+      %= submit_button 'preview', id => 'preview_news'
+      %= submit_button 'post news', id => 'post_news'
+% end

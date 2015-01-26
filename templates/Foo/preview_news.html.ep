@@ -1,0 +1,15 @@
+% layout 'default';
+<h2><%= $headline %></h2> 
+<p><%= $content %></p>
+%= form_for adding_news => (method => 'POST') => begin
+	%= hidden_field headline_news => $headline
+	%= hidden_field content_news  => $content
+	
+	%= submit_button 'post_news', id => 'post_news'
+% end
+
+%= form_for add_news => (method => 'POST') => begin
+	%= hidden_field headline_news => $headline
+	%= hidden_field content_news  => $content
+	%= submit_button 'back', id => 'back'
+% end

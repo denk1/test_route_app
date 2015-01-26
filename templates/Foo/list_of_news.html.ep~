@@ -1,0 +1,17 @@
+% layout 'default';
+<span style="float: right;"><p><%= link_to Logout => 'logout' %></p></span>
+<span style="float: left;"><p><%= link_to Add_news => 'add_news' %></p></span>
+<div style="height: 40px;">list of news</div>
+
+
+% my $result_news = $db->GetTable('articles');
+<ul>
+% while(my $next = $result_news->hash) {
+% my $id_news = $next->{'id'};
+% my $path_link_edit   = "/admin/edit_news/$id_news";
+% my $path_link_delete = url_for('/admin/delete_news')->query(id => $id_news)->to_abs;
+%  
+%
+  <li><p><%= $next->{'headline'} %></p><p><%= link_to 'edit' => $path_link_edit %></p><p><%= link_to 'delete' =>  $path_link_delete %></p></li>
+% }
+</ul>

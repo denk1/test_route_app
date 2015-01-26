@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head><meta charset="utf-8"><title><%= title %></title></head>
+  <body bgcolor=#439899>
+   <div style="height: 40px;">
+    <p>
+    <span style="float: left;"><%= link_to 'main_page' => '/'; %></span>
+    <span style="float: right;"><%= link_to 'admin' => '/admin'; %></span>
+    </p>
+   </div>
+   <div style="height: 40px;">
+      <%= content %>
+   </div>
+  </body>
+</html>

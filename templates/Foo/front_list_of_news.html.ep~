@@ -1,0 +1,38 @@
+% layout 'default';
+    <h1 style="text-align:center;">News</h1>
+    <p>
+    <ul>
+    % my $result_news;
+    % my $result_tags = $db->GetTable('tags');
+    % if (defined $id)
+    % {
+    % 	$result_news = $db->GetTableWhereId('article_tag_view', 'id_tag', $id);
+    % 	
+    % }
+    %  else
+    %  {
+    % 	 $result_news = $db->GetTable('articles');
+    % 		   
+    %  }
+    % my $i = 0;
+    % while (my $next = $result_news->hash ) {
+
+       <ul>
+       <li><%= ++$i;  %><%= link_to $next->{'headline'} => $next->{'id'}; %></li> 
+       </ul>
+       
+    % }
+    </ul>
+    </p>
+    <h1 style="text-align:center;">Tags</h1>
+    <p style="border-color: #ff0000; text-align: center;">
+    
+    % while (my $next = $result_tags->array ) {
+
+       % my $path_tags = '/tag/';
+       % $path_tags .= $next->[0];
+       <span><%= link_to $next->[1] => $path_tags; %></span> 
+       
+       
+    % }	
+    </p>

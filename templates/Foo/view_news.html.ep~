@@ -1,0 +1,19 @@
+% layout 'default';
+% my $result_news = $db->GetTableWhereId('articles', 'id', $id);
+% my $next = $result_news->hash;
+<h2><%= $next->{'headline'} %></h2> 
+<p><%= $next->{'content'} %></p>
+% $result_tags = $db->GetTableWhereId('article_tag_view', 'id', $id);
+    </p>
+    <h1 style="text-align:center;">Tags</h1>
+    <p style="border-color: #ff0000; text-align: center;">
+    
+    % while (my $n = $result_tags->hash ) {
+
+       % my $path_tags = '/tag/';
+       % $path_tags .= $n->{'id_tag'};
+       <span><%= link_to $n->{'tag'} => $path_tags; %></span> 
+       
+       
+    % }	
+    </p>

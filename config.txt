@@ -1,0 +1,4 @@
+user:postgres
+password:123123
+db:news
+location:localhost

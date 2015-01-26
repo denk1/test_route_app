@@ -1,0 +1,29 @@
+% layout 'default';
+
+% content_for 'header1' => begin
+
+
+  %= form_for admin => begin
+  % if (param 'user') {
+    <b>Wrong name or password, please try again.</b><br>
+  % }
+  Name:<br>
+  %= text_field 'user'
+  <br>Password:<br>
+  %= password_field 'pass'
+  <br>
+  %= submit_button 'Login'
+  Welcome <%= session 'user' %>.<br>
+  %= link_to Logout => 'logout'
+% end
+
+
+
+% end
+
+% content_for 'header2' => begin
+
+  list of news
+
+% end
+

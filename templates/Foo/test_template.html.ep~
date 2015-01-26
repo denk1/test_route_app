@@ -1,0 +1,10 @@
+% layout 'default';
+
+% foreach my $v (@{$test_variable}) {
+%= 'fsfsfsdf'
+   <p><%= $v %></p>
+% }
+
+% foreach my $k keys(%{$test_hash}) {
+	<p><%= $k; %></p>
+% }

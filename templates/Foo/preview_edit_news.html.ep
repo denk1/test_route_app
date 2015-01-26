@@ -1,0 +1,19 @@
+% layout 'default';
+<h2><%= $headline %></h2> 
+<p><%= $content %></p>
+%= form_for editing_news => (method => 'POST') => begin
+	%= hidden_field id_news => $id
+	%= hidden_field headline_news => $headline
+	%= hidden_field content_news  => $content
+	
+	%= submit_button 'post_news', id => 'post_news'
+% end
+
+% my $path_edit_news = "edit_news/$id";
+
+%= form_for $path_edit_news => (method => 'POST') => begin
+	%= hidden_field id_news => $id
+	%= hidden_field headline_news => $headline
+	%= hidden_field content_news  => $content
+	%= submit_button 'back', id => 'back', name => 'back'
+% end
